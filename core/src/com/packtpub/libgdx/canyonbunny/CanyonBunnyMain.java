@@ -9,29 +9,29 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class CanyonBunnyMain extends ApplicationAdapter {
 	private static final String TAB = CanyonBunnyMain.class.getName();
-	private WorldController WorldController;
-	private WorldRenderer WorldRenderer;
+	private WorldController worldController;
+	private WorldRenderer worldRenderer;
 	
 	
 	@Override
 	public void create() {
-		WorldController = new WorldController();
-		WorldRenderer = new WorldRenderer(WorldRenderer);
+		worldController = new WorldController();
+		worldRenderer = new WorldRenderer(worldController);
 		
 	}
 	
     @Override
 	public void render() {
-    	WorldController.update(Gdx.graphics.getDeltaTime());
+    	worldController.update(Gdx.graphics.getDeltaTime());
 		Gdx.gl.glClearColor(0x64/255.0f, 0x95/255.0f, 0xed/255, 0xff/255.0f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		WorldRenderer.render();
+		worldRenderer.render();
     }
     
     @Override 
     public void resize(int width, int height) {
     	// TODO Auto-generated method stub
-    	WorldRenderer.resize(width, height);
+    	worldRenderer.resize(width, height);
     	
     }
     
@@ -51,7 +51,7 @@ public class CanyonBunnyMain extends ApplicationAdapter {
     
     @Override 
     public void dispose() {
-    	WorldRenderer.dispose();
+    	worldRenderer.dispose();
     	
     }
 	
